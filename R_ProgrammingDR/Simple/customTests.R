@@ -25,7 +25,7 @@ dbs_on_demand <- function(){
   loadDigest()
   selection <- getState()$val
   if(selection == "Yes"){
-    course <- "r_subsettings_vectors"
+    course <- "r_simple"
     email <- readline("What is your email address? ")
     student_number <- readline("What is your student number? ")
     hash <- digest(paste(course, student_number), "md5", serialize = FALSE)

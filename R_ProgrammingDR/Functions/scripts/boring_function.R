@@ -16,7 +16,7 @@
 #
 # Below we will create a function called boring_function. This function takes
 # the argument `x` as input, and returns the value of x without modifying it.
-# Delete the pound sign in front of the x to make the function work! Be sure to 
+# Delete the hash # sign in front of the x to make the function work! Be sure to
 # save this script and type submit() in the console after you make your changes.
 
 boring_function <- function(x) {

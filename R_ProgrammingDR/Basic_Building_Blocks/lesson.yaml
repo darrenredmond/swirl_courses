@@ -245,8 +245,7 @@
   Hint: If your programming environment doesn't support auto-completion, just type my_div and hit Enter to move on.
 
 - Class: mult_question
-  Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
+  Output: "Would you like to receive credit for completing this course on dbsdataprojects.com?"
   CorrectAnswer: NULL
   AnswerChoices: Yes;No
   AnswerTests: dbs_on_demand()

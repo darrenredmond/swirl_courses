@@ -16,25 +16,29 @@ getExpr <- function(){
   getState()$expr
 }
 
-coursera_on_demand <- function(){
+loadDigest <- function(){
+  if (!require("digest")) install.packages("digest")
+  library(digest)
+}
+
+dbs_on_demand <- function(){
+  loadDigest()
   selection <- getState()$val
   if(selection == "Yes"){
+    course <- "r_vectors"
     email <- readline("What is your email address? ")
-    token <- readline("What is your assignment token? ")
+    student_number <- readline("What is your student number? ")
+    hash <- digest(paste(course, student_number), "md5", serialize = FALSE)
     
     payload <- sprintf('{  
-      "assignmentKey": "-ACWUq8VEeWyvg4disSh_Q",
-      "submitterEmail": "%s",  
-      "secret": "%s",  
-      "parts": {  
-        "bMOHi": {  
-          "output": "correct"  
-        }  
-      }  
-    }', email, token)
-    url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
+      "course": "%s",
+      "email": "%s",  
+      "student_number": "%s",  
+      "hash": "%s",  
+    }', course, email, student_number, hash)
+    url <- paste('http:///results.dbsdataprojects.com/course_results/submit?course=', course, '&hash=', hash, '&email=', email, '&student_number=', student_number, sep='')
   
-    respone <- httr::POST(url, body = payload)
+    respone <- httr::GET(url)
     if(respone$status_code >= 200 && respone$status_code < 300){
       message("Grade submission succeeded!")
     } else {

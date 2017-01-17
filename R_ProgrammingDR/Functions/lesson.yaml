@@ -55,11 +55,11 @@
 - Class: script
   Output: The last R expression to be evaluated in a function will become the 
     return value of that function. We want this function to take one argument, 
-    x, and return x without modifying it. Delete the pound
+    x, and return x without modifying it. Delete the hash #
     sign so that x is returned without any modification. Make sure to save your
     script before you type submit().
   AnswerTests: test_func1()
-  Hint: Make sure to delete the pound sign so the last expression in the function is just x.
+  Hint: Make sure to delete the hash # sign so the last expression in the function is just x.
   Script: boring_function.R
 
 - Class: cmd_question
@@ -334,8 +334,8 @@
 
 - Class: mult_question
   Output: "Would you like to receive credit for completing this course on
-    Coursera.org?"
+    dbsdataprojects.com?"
   CorrectAnswer: NULL
   AnswerChoices: Yes;No
-  AnswerTests: coursera_on_demand()
+  AnswerTests: dbs_on_demand()
   Hint: ""

@@ -12,10 +12,10 @@
 # set.seed(1234)
 # hire_date <- sample(poss_hires, 99, replace=TRUE)
 # eedata <- data.frame(ee_num = 1:99, dob, hire_date)
-# write.csv(eedata, file='R_Programming/Dates_and_Times/eedata.csv', 
+# write.csv(eedata, file='R_ProgrammingDR/Dates_and_Times/eedata.csv',
 #           row.names=FALSE)
 # 
-# .path2data <- file.path(path.package('swirl'), 'Courses', 'R_Programming',
+# .path2data <- file.path(path.package('swirl'), 'Courses', 'R_ProgrammingDR',
 #                        'Dates_and_Times', 'eedata.csv')
 # eedata <- read.csv(.path2data, as.is=TRUE)
 # eedata$dob <- as.Date(eedata$dob)
